@@ -3,7 +3,7 @@ Library      SeleniumLibrary
 Library      String
 Library      Collections
 Library      RequestsLibrary
-Library    XML
+
 
 
 *** Variables ***
@@ -13,7 +13,7 @@ ${markets_section}   //*[@id="market-fold"]
 ${deriv_life}    //*[text()="deriv life"]//parent::div
 
 # Footer
-${youtube}    //a[@href="https://www.youtube.com/@derivlife"]
+${youtube}    //a[@href="https://www.youtube.com/@deriv"]
 ${reddit}    //a[@href="https://www.reddit.com/user/Deriv_official/"]
 ${telegram}    //a[@href="https://t.me/derivdotcomofficial"]
 ${facebook}    //a[@href="https://www.facebook.com/derivdotcom"]
@@ -91,7 +91,7 @@ Check Trading Platforms
     Page Should Contain    Trade the world’s markets with our popular user-friendly platform.
     Page Should Contain Element    ${deriv_trader}
     Page Should Contain    A whole new trading experience on a powerful yet easy to use platform.
-    Page Should Not Contain Element    ${deriv_go}
+    Page Should Contain Element    ${deriv_go}
     Page Should Contain    Trade multipliers on forex, cryptocurrencies, and synthetic indices with our mobile app.
     Page Should Contain Element    ${deriv_bot}
     Page Should Contain    Automated trading at your fingertips. No coding needed.
@@ -123,8 +123,10 @@ Check Traders Menu
     
 #make sure Deriv Life link in main page is linked correctly to https://derivlife.com/ .
 Check Deriv Life
+    Go To Homepage
     Open About US Menu
     Click Element    ${deriv_life}
+    Switch Window  locator=NEW
     Page Should Contain    Making an impact that matters
 #check social media link is correct
 Check Social Networks
