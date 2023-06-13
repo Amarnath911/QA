@@ -24,8 +24,8 @@ Task 5
     Wait Until Page Contains Element    dt_login_button    10
     Click Element    dt_login_button
     Wait Until Page Contains Element    txtEmail    10
-    Input Text    txtEmail    amarnath@besquare.com.my
-    Input Password    txtPass    Mikecool911
+    Input Text    txtEmail    testemail
+    Input Password    txtPass    testpassword
     Click Element    //button[@name="login"]
     Wait Until Page Contains Element    ${dropdown_btn}     10
     Click Element   ${dropdown_btn}
